@@ -1,0 +1,37 @@
+/* Hero-only motion. The original brand silhouette is embedded in hero-infinity.svg. */
+.scooper-hero-visual.scooper-hero-motion { min-height:450px; perspective:1000px; }
+.scooper-hero-motion::before,.scooper-hero-motion::after { content:none; }
+.scooper-hero-motion .scooper-motion-stage { position:relative; width:100%; aspect-ratio:600 / 460; direction:ltr; pointer-events:none; }
+.scooper-hero-motion .scooper-motion-orbits,
+.scooper-hero-motion .scooper-motion-object { position:absolute; inset:0; margin:0; transition:transform 650ms cubic-bezier(.2,.7,.2,1); }
+.scooper-hero-motion .scooper-motion-orbits { transform:translate3d(calc(var(--hero-x,0px) * -.55),calc(var(--hero-y,0px) * -.55 + var(--hero-scroll,0px) * -.5),0); }
+.scooper-hero-motion .scooper-motion-orbits svg { width:100%; height:100%; overflow:visible; }
+.scooper-hero-motion .scooper-orbit-line { fill:none; stroke:#9b528b; stroke-width:1.65; opacity:.4; }
+.scooper-hero-motion .scooper-orbit-line--pink { stroke:#d864a5; opacity:.44; }
+.scooper-hero-motion .scooper-orbit-accent { fill:none; stroke:#b33189; stroke-width:4.5; stroke-linecap:round; stroke-dasharray:.1 999.9; stroke-dashoffset:var(--phase); animation:scooper-orbit-travel var(--orbit-time,12s) linear infinite; animation-delay:var(--orbit-delay,0s); }
+.scooper-hero-motion .scooper-orbit-accent--pink { stroke:#ed5f9f; stroke-width:5.5; filter:drop-shadow(0 0 2px #ec238660); }
+.scooper-hero-motion .scooper-orbit-tail { stroke-width:1.7; stroke-dasharray:20 980; opacity:.55; }
+.scooper-hero-motion .scooper-motion-object { display:grid; place-items:center; transform:translate3d(var(--hero-x,0px),calc(var(--hero-y,0px) + var(--hero-scroll,0px)),0) rotateX(var(--hero-rx,0deg)) rotateY(var(--hero-ry,0deg)); }
+.scooper-hero-motion .scooper-motion-float { position:relative; width:92%; margin:0; animation:scooper-mark-breathe 13s ease-in-out infinite; }
+.scooper-hero-motion .scooper-motion-float img { display:block; width:100%; height:auto; filter:drop-shadow(0 22px 16px #63235420); }
+.scooper-hero-motion .scooper-motion-ground { position:absolute; width:62%; height:11%; left:19%; bottom:9%; border-radius:50%; background:radial-gradient(ellipse,#6c2b6120,transparent 70%); transform:rotate(-5deg); animation:scooper-mark-shadow 13s ease-in-out infinite; }
+.scooper-hero-motion .scooper-material-mask { position:absolute; inset:0; overflow:hidden; mask:url('../hero/hero-surface-mask.svg') center / 100% 100% no-repeat; }
+.scooper-hero-motion .scooper-material-mask::after { content:''; position:absolute; inset:-20% -30%; background:linear-gradient(112deg,transparent 34%,#fff1fa08 42%,#fff4fb66 49%,#fff9fd96 50%,#ffdbea30 54%,transparent 64%); transform:translateX(-75%); animation:scooper-surface-light 18s linear infinite; }
+.scooper-hero-motion .scooper-orbit-distance { opacity:.7; filter:blur(.4px); }
+.scooper-hero-motion .scooper-motion-orbits--front { z-index:2; transform:translate3d(calc(var(--hero-x,0px) * .3),calc(var(--hero-y,0px) * .3 + var(--hero-scroll,0px) * .2),0); }
+.scooper-hero-motion .scooper-motion-orbits--front .scooper-orbit-line { opacity:.48; stroke-width:1.4; }
+@keyframes scooper-surface-light { to { transform:translateX(75%); } }
+@keyframes scooper-mark-breathe { 0%,100% { transform:translateY(6px) rotate(-5deg) scale(1); } 50% { transform:translateY(-9px) rotate(-3deg) scale(1.018); } }
+@keyframes scooper-mark-shadow { 0%,100% { opacity:.85; scale:1; } 50% { opacity:.5; scale:.94; } }
+@keyframes scooper-orbit-travel { to { stroke-dashoffset:calc(var(--phase) - 1000px); } }
+.scooper-hero-motion[data-motion-paused] .scooper-motion-float,
+.scooper-hero-motion[data-motion-paused] .scooper-motion-ground,
+.scooper-hero-motion[data-motion-paused] .scooper-material-mask::after,
+.scooper-hero-motion[data-motion-paused] .scooper-orbit-accent { animation-play-state:paused; }
+@media (max-width:781px) { .scooper-hero-visual.scooper-hero-motion { min-height:0; } }
+@media (prefers-reduced-motion:reduce) {
+  .scooper-hero-motion .scooper-motion-float,.scooper-hero-motion .scooper-motion-ground,.scooper-hero-motion .scooper-orbit-accent,.scooper-hero-motion .scooper-material-mask::after { animation:none; }
+  .scooper-hero-motion .scooper-motion-orbits,.scooper-hero-motion .scooper-motion-object { transform:none; transition:none; }
+  .scooper-hero-motion .scooper-motion-float { transform:rotate(-4deg); }
+}
+

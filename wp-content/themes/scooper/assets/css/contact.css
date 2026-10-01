@@ -1,0 +1,107 @@
+/* Final contact surface inherits the existing environment's current entry color. */
+.scooper-contact {
+	position:relative; isolation:isolate; background:var(--wp--preset--color--plum);
+	color:var(--wp--preset--color--white);
+	padding-block:clamp(4rem,8vw,8rem);
+}
+.scooper-contact::before {
+	content:""; position:absolute; inset-inline:0; top:-32px; height:160px; pointer-events:none;
+	background:linear-gradient(to bottom,var(--lower-environment-color,#FAF7FB) 0%,
+		color-mix(in srgb,var(--lower-environment-color,#FAF7FB) 94%,#2D1631) 16%,
+		color-mix(in srgb,var(--lower-environment-color,#FAF7FB) 73%,#2D1631) 36%,
+		color-mix(in srgb,var(--lower-environment-color,#FAF7FB) 36%,#2D1631) 62%,
+		color-mix(in srgb,var(--lower-environment-color,#FAF7FB) 8%,#2D1631) 84%,#2D1631 100%);
+}
+.scooper-contact::after {
+	content:""; position:absolute; inset:0; pointer-events:none;
+	background:radial-gradient(ellipse at 88% 70%,#95258F30,transparent 58%),radial-gradient(ellipse at 8% 0%,#EA4C9A18,transparent 55%);
+	mask-image:linear-gradient(to bottom,transparent 128px,#000 220px);
+}
+.scooper-contact > .scooper-contact__inner {
+	position:relative; z-index:1;
+	display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+	align-items:center; gap:clamp(2.5rem,6vw,6rem);
+	max-width:var(--wp--custom--batch-a--width);
+}
+.scooper-contact__inner > * { min-width:0; margin-block:0; }
+.scooper-contact__intro::before {
+	content:""; display:block; width:4rem; height:4px; border-radius:99px;
+	margin-block-end:1.75rem; background:var(--wp--preset--color--pink);
+	box-shadow:0 0 28px #EA4C9A40;
+}
+.scooper-contact .scooper-contact__heading {
+	color:inherit; font-size:clamp(2.75rem,4.6vw,4.5rem); line-height:1.16;
+	margin:0 0 1.5rem; letter-spacing:-.035em;
+}
+.scooper-contact .scooper-contact__copy {
+	color:#E9DCEB; font-size:clamp(1.05rem,1.4vw,1.25rem);
+	line-height:1.85; max-width:34ch; margin:0;
+}
+.scooper-contact__form {
+	padding:clamp(1.5rem,3.2vw,3rem); border:1px solid #FFFFFF70;
+	border-radius:var(--wp--custom--batch-a--radius); background:var(--wp--preset--color--warm-white);
+	color:var(--wp--preset--color--plum); box-shadow:0 24px 64px #10091638,0 2px 8px #10091618;
+}
+.scooper-contact__fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+.scooper-contact__field { min-width:0; }
+.scooper-contact__field--wide { grid-column:1 / -1; }
+.scooper-contact__field label { display:block; font-size:.95rem; font-weight:600; margin-block-end:.5rem; }
+.scooper-contact__field :is(input,textarea) {
+	display:block; width:100%; min-width:0; min-height:54px; padding:.8rem 1rem;
+	border:1px solid #A99BAC; border-radius:12px; background:#FFFFFF;
+	color:var(--wp--preset--color--ink); font:inherit; font-size:1rem; line-height:1.5;
+	transition:border-color 180ms,box-shadow 180ms;
+}
+.scooper-contact__field [dir="ltr"] { direction:ltr; text-align:left; }
+.scooper-contact__field textarea { min-height:126px; resize:vertical; }
+.scooper-contact__field :is(input,textarea):hover { border-color:var(--wp--preset--color--accent); }
+.scooper-contact__field :is(input,textarea):focus-visible {
+	outline:3px solid var(--wp--preset--color--accent); outline-offset:3px;
+	border-color:var(--wp--preset--color--accent); box-shadow:0 0 0 5px #B514690B;
+}
+.scooper-contact__submit {
+	display:inline-flex; align-items:center; justify-content:center; gap:.65rem;
+	width:100%; min-height:54px; min-width:0; margin-block-start:1.75rem; padding:.85rem 1rem;
+	border:0; border-radius:12px; cursor:pointer;
+	background:linear-gradient(110deg,#95258F,#B51469 55%,#D81F7C); color:#FFFFFF; font:inherit; font-size:clamp(.9375rem,1.2vw,1.05rem); font-weight:700;
+	box-shadow:0 8px 24px #95258F26; transition:box-shadow 330ms cubic-bezier(.22,1,.36,1),transform 330ms cubic-bezier(.22,1,.36,1);
+}
+.scooper-contact__arrow { font-size:1.45em; line-height:1; }
+.scooper-contact__submit:enabled:hover,.scooper-contact__submit:enabled:focus-visible { box-shadow:0 12px 28px #95258F50,0 0 18px #EC238647; transform:scale(1.02); }
+.scooper-contact__submit:focus-visible { outline:3px solid var(--wp--preset--color--accent); outline-offset:5px; }
+.scooper-contact__submit:enabled:active { transform:translateY(0); }
+.scooper-contact__submit:disabled { cursor:default; opacity:.65; }
+.scooper-contact__status,.scooper-contact__notice { font-size:.875rem; line-height:1.6; color:var(--wp--preset--color--slate); }
+.scooper-contact__status { min-height:1.6em; margin:.85rem 0 0; }
+@media (min-width:782px) {
+	.scooper-contact { padding-block:2.25rem; }
+	.scooper-contact__form { padding-block:1.5rem; }
+	.scooper-contact__fields { row-gap:.75rem; }
+	.scooper-contact__field textarea { height:96px; min-height:96px; }
+	.scooper-contact__submit { margin-block-start:1.1rem; }
+	.scooper-contact__status { min-height:0; margin:0; }
+	.scooper-contact__status:has(span:not([hidden])) { margin-block-start:.65rem; }
+	.scooper-contact__intro::before { margin-block-end:1rem; }
+	.scooper-contact .scooper-contact__heading { margin-block-end:1rem; }
+}
+.scooper-footer {
+	position:relative;
+	display:flex; align-items:center; justify-content:center; min-height:64px;
+	padding:1rem clamp(1.25rem,4vw,3rem); margin:0;
+	background:linear-gradient(#160C1B38,#160C1B38),var(--wp--preset--color--plum);
+	box-shadow:inset 0 1px 0 #F1C4E80A; color:#E9DCEB; text-align:center;
+}
+.scooper-footer::before { content:""; position:absolute; inset-inline:0; top:0; height:1px; background:#FFFFFF50; box-shadow:0 -2px 6px #FFFFFF20,0 2px 8px #FFFFFF18; pointer-events:none; }
+.scooper-footer p { margin:0; font-size:.875rem; line-height:1.65; }
+@media (max-width:781px) {
+	.scooper-contact > .scooper-contact__inner { grid-template-columns:minmax(0,1fr); gap:2rem; }
+	.scooper-contact .scooper-contact__copy { max-width:none; }
+}
+@media (max-width:540px) {
+	.scooper-contact__fields { grid-template-columns:minmax(0,1fr); gap:1rem; }
+	.scooper-contact__submit { width:100%; min-width:0; }
+}
+@media (prefers-reduced-motion:reduce) {
+	.scooper-contact :is(input,textarea,button) { transition:none; }
+	.scooper-contact__submit:enabled:hover,.scooper-contact__submit:enabled:focus-visible { transform:none; }
+}

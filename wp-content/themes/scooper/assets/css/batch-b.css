@@ -1,0 +1,157 @@
+/* Shared lower-page environment, scoped to Sections 5–8. */
+.scooper-lower-environment {
+	position:relative; isolation:isolate; margin-block-start:0 !important;
+	background:var(--lower-environment-color,var(--boundary-color,#2D1631));
+}
+.scooper-lower-environment > * { margin-block-start:0 !important; }
+:is(.scooper-personas,.scooper-capabilities,.scooper-testimonials,.scooper-faq) > .alignwide {
+	max-width:var(--wp--custom--batch-a--width);
+}
+:is(.scooper-personas,.scooper-capabilities) > .alignwide { padding-block-start:2.5rem; }
+:is(.scooper-personas,.scooper-capabilities,.scooper-testimonials,.scooper-faq) .scooper-section-heading,
+:is(.scooper-personas,.scooper-capabilities) .scooper-section-copy {
+	text-align:center; margin-inline:auto;
+}
+.scooper-personas { position:relative; isolation:isolate; background:var(--boundary-color,var(--wp--preset--color--warm-white)); }
+.scooper-personas .scooper-section-heading { max-width:none; }
+.scooper-personas .scooper-section-heading { color:var(--boundary-ink,var(--wp--preset--color--plum)); }
+.scooper-personas .scooper-section-copy { color:var(--boundary-ink,var(--wp--preset--color--slate)); }
+/* Both adjoining surfaces share one scroll-linked color; no reveal geometry. */
+.scooper-lower-environment.scooper-lower-environment > :is(.scooper-verticals,.scooper-capabilities,.scooper-testimonials,.scooper-faq) {
+	background:transparent; border-block:0; box-shadow:none;
+}
+.scooper-persona-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; }
+.scooper-persona-grid > * { margin-block-start:0; }
+.scooper-persona-card,.scooper-persona-card:last-child {
+	position:relative; min-height:17rem; padding:2rem 2.25rem; text-align:center;
+	border:1px solid #E4BCE9; border-radius:var(--wp--custom--batch-a--radius);
+	background:linear-gradient(145deg,#FFFFFF 35%,#FCF6FD); color:var(--wp--preset--color--plum);
+	box-shadow:0 5px 7px #5020520B,0 12px 26px #50205212;
+	transition:transform 360ms ease,box-shadow 360ms ease,border-color 360ms ease;
+}
+.scooper-persona-card h3,.scooper-persona-card:last-child h3 { color:var(--wp--preset--color--plum); font-size:1.5rem; line-height:1.4; }
+.scooper-persona-card p,.scooper-persona-card:last-child p { color:var(--wp--preset--color--slate); line-height:1.8; }
+.scooper-persona-card::before,.scooper-capability-card::before {
+	content:""; display:block; position:static; width:3.75rem; height:3.75rem; margin:0 auto 1.4rem;
+	border:1px solid #EDD2EF; border-radius:1.1rem;
+	background:var(--card-icon) center / 1.9rem no-repeat,#F8EAF8;
+	box-shadow:inset 0 1px 0 #FFFFFF,0 5px 12px #95258F0B;
+}
+.scooper-personas__closing { position:relative; width:fit-content; max-width:100%; box-sizing:border-box; margin:2.75rem auto 0; padding:.8rem 1.35rem; border-radius:1rem; background:var(--wp--preset--color--batch-blush); color:var(--wp--preset--color--plum); }
+.scooper-capabilities { color:var(--lower-environment-ink,#FFFDFE); }
+.scooper-capabilities .scooper-section-heading { color:var(--lower-environment-ink,#FFFDFE); max-width:30ch; }
+.scooper-capabilities .scooper-section-copy { color:var(--lower-environment-ink,#FFFDFE); }
+.scooper-capability-grid { grid-template-columns:repeat(5,minmax(0,1fr)); gap:1.25rem; padding:0; }
+.scooper-capability-card,.scooper-capability-card:nth-child(n+4) {
+	position:relative; grid-column:auto; min-height:20rem; padding:2rem 1.35rem; text-align:center;
+	border:1px solid #E4BCE9; border-radius:var(--wp--custom--batch-a--radius);
+	background:#FFFCFF; box-shadow:0 5px 7px #5020520B,0 12px 26px #50205212;
+	transition:background-color 440ms ease,color 440ms ease,border-color 440ms ease,box-shadow 440ms ease,transform 440ms ease;
+}
+.scooper-capability-card .scooper-card-index { display:none; }
+.scooper-capability-card h3 { color:var(--wp--preset--color--plum); font-size:1.35rem; line-height:1.45; min-height:3.9rem; transition:color 440ms ease; }
+.scooper-capability-card p:not(.scooper-card-index) { color:var(--wp--preset--color--slate); font-size:1rem; line-height:1.85; transition:color 440ms ease; }
+.scooper-capabilities-closing { color:var(--lower-environment-ink,#FFFDFE); font-size:1.1rem; margin-top:2.5rem; }
+.scooper-testimonials { padding-block-start:calc(var(--wp--preset--spacing--60) + 10px); }
+.scooper-testimonials .scooper-section-heading { color:var(--lower-environment-ink,var(--wp--preset--color--plum)); margin-block-end:calc(1.5rem + 12px); }
+.scooper-testimonial-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2rem; max-width:1120px; margin-inline:auto; align-items:stretch; }
+.scooper-testimonial {
+	position:relative; display:flex; flex-direction:column; margin:0 !important; min-height:0;
+	padding:2rem 2.5rem; border:1px solid #8E518E; border-radius:var(--wp--custom--batch-a--radius);
+	background:radial-gradient(ellipse at 0 0,#65306055,transparent 65%),#2D1631; color:#F9F0FA;
+	box-shadow:0 7px 12px #2D163115,0 22px 42px #2D163122;
+	font-size:1.15rem; line-height:1.9;
+}
+.scooper-testimonial p { margin:0 0 1rem; line-height:1.9; color:#F9F0FA; }
+.scooper-testimonial cite { display:flex; align-items:center; justify-content:space-between; gap:1.25rem; min-height:calc(2.3rem + 1.1rem + 1px); border-top:1px solid #B270AE70; padding-top:1.1rem; margin-top:auto; font-size:1rem; line-height:1.8; font-weight:500; font-style:normal; color:#EBCDEB; }
+.scooper-testimonial__attribution { min-width:0; }
+.scooper-testimonial__attribution strong { color:white; font-weight:700; }
+.scooper-testimonial__logo { display:block; flex:none; width:auto; max-width:100%; object-fit:contain; }
+.scooper-testimonial__logo--pama { height:2.3rem; }
+.scooper-testimonial__logo--prpl { height:1.8rem; }
+@media (min-width:801px) { .scooper-testimonial__attribution { white-space:nowrap; } }
+.scooper-faq { color:var(--wp--preset--color--ink); }
+.scooper-faq__inner { max-width:1100px !important; }
+.scooper-faq .scooper-section-heading { color:var(--wp--preset--color--plum); margin-bottom:clamp(2rem,4vw,3.5rem); }
+.scooper-faq__list { display:grid; gap:.85rem; max-width:1040px; margin-inline:auto; interpolate-size:allow-keywords; }
+.scooper-faq-item {
+	margin:0; border:1px solid #D7B5DD; border-radius:1rem; overflow:hidden;
+	background:#FFFCFFEB; box-shadow:0 5px 14px #5020520D,0 14px 28px #50205212;
+	transition:border-color 220ms ease,box-shadow 220ms ease,background-color 220ms ease;
+}
+.scooper-faq-item summary {
+	display:flex; align-items:center; justify-content:space-between; gap:1.25rem;
+	padding:1.25rem 1.5rem; color:var(--wp--preset--color--plum); cursor:pointer;
+	font-size:1.16rem; font-weight:750; line-height:1.55; list-style:none;
+}
+.scooper-faq-item summary::-webkit-details-marker { display:none; }
+.scooper-faq-item summary::after {
+	content:"+" / ""; display:grid; place-items:center; flex:none; width:2rem; height:2rem;
+	border:1px solid #D7B5DD; border-radius:50%; color:var(--wp--preset--color--accent);
+	font-size:1.45rem; font-weight:400; line-height:1; transition:transform 220ms ease,color 220ms ease,border-color 220ms ease;
+}
+.scooper-faq-item::details-content { block-size:0; overflow:hidden; opacity:0; transition:block-size 280ms cubic-bezier(.22,1,.36,1),opacity 180ms ease; }
+.scooper-faq-item[open]::details-content { block-size:auto; opacity:1; }
+.scooper-faq-item[open] { border-color:#D5268B; background:#FFFFFF; box-shadow:0 8px 18px #50205212,0 18px 34px #B5146917; }
+.scooper-faq-item[open] summary { color:#A31164; }
+.scooper-faq-item[open] summary::after { color:#D5268B; border-color:#D5268B; transform:rotate(45deg); }
+.scooper-faq-item > p { margin:0; padding:0 1.5rem 1.4rem; color:var(--wp--preset--color--slate); font-size:1rem; line-height:1.85; }
+.scooper-faq-item summary:focus-visible { outline:3px solid var(--wp--preset--color--accent); outline-offset:-4px; border-radius:.85rem; }
+/* Only JS-armed elements animate; content remains visible without JS and in the editor. */
+.scooper-b-reveal { transition:opacity 1050ms linear,translate 1050ms cubic-bezier(.22,1,.36,1); transition-delay:var(--b-delay,0ms); }
+.scooper-b-reveal.is-pending { opacity:0; translate:0 32px; }
+.scooper-b-reveal.is-card { transition-duration:850ms; }
+.scooper-b-reveal.is-card.is-pending { translate:18px 22px; }
+.scooper-testimonial.scooper-b-reveal { transition-duration:1200ms; }
+@media (hover:hover) and (pointer:fine) {
+	.scooper-persona-card:hover { transform:translateY(-4px); border-color:#CD8DCF; box-shadow:0 8px 12px #5020520B,0 18px 32px #95258F21; }
+	.scooper-capability-card:hover { transform:translateY(-4px); background-color:#2D1631; color:white; border-color:#D751B3; box-shadow:0 18px 32px #2D16312B,0 0 24px #D5268B25; }
+	.scooper-capability-card:hover h3 { color:white; }
+	.scooper-capability-card:hover p:not(.scooper-card-index) { color:#F1E2F3; }
+	.scooper-faq-item:hover { border-color:#C786D0; box-shadow:0 7px 16px #50205212,0 17px 32px #95258F18; }
+}
+@media (max-width:1100px) {
+	.scooper-capability-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+	.scooper-capability-card,.scooper-capability-card:nth-child(n+4) { grid-column:span 2; }
+	.scooper-capability-card:nth-child(n+4) { grid-column:span 3; }
+	.scooper-testimonial { padding:1.75rem; }
+}
+@media (max-width:800px) {
+	.scooper-persona-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+	.scooper-testimonial-grid { grid-template-columns:1fr; gap:1.5rem; }
+	.scooper-testimonial { min-height:0; }
+	.scooper-testimonial cite { margin-top:1.25rem; }
+	.scooper-persona-card,.scooper-persona-card:last-child { padding:1.75rem; }
+}
+@media (max-width:600px) {
+	.scooper-persona-grid { grid-template-columns:1fr; gap:1.25rem; }
+	.scooper-persona-card,.scooper-persona-card:last-child { min-height:0; padding:1.75rem 1.5rem; }
+	.scooper-capability-grid { grid-template-columns:1fr; }
+	.scooper-capability-card,.scooper-capability-card:nth-child(n+4) { grid-column:auto; min-height:0; padding:2rem 1.5rem; }
+	.scooper-capability-card h3 { min-height:0; }
+	.scooper-testimonial { padding:1.75rem 1.5rem; font-size:1.0625rem; }
+	.scooper-faq-item summary { padding:1.05rem 1.1rem; gap:.8rem; font-size:1.04rem; }
+	.scooper-faq-item summary::after { width:1.8rem; height:1.8rem; }
+	.scooper-faq-item > p { padding:0 1.1rem 1.2rem; }
+	.scooper-b-reveal.is-card.is-pending { translate:0 20px; }
+}
+@media (prefers-reduced-motion:reduce) {
+	.scooper-b-reveal,.scooper-b-reveal.is-pending { opacity:1; translate:none; transition:none; }
+	.scooper-persona-card,.scooper-capability-card,.scooper-capability-card h3,.scooper-capability-card p { transition:none; }
+	.scooper-persona-card:hover,.scooper-capability-card:hover { transform:none; }
+	.scooper-faq-item,.scooper-faq-item::details-content,.scooper-faq-item summary::after { transition:none; }
+}
+@media (hover:none),(pointer:coarse) { .scooper-persona-card:hover,.scooper-capability-card:hover { transform:none; } }
+
+/* Decorative icons never enter the accessibility tree or content model. */
+.scooper-persona-card:nth-child(1) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%2010v5h4l10%205V5L8%2010H4Zm4%205%202%206h3l-2-5M21%209v7%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-persona-card:nth-child(2) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m12%203%208%203v6c0%204-5%207-8%209-3-2-8-5-8-9V6l8-3Zm-4%209%203%203%205-6%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-persona-card:nth-child(3) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%223%22%20width%3D%2214%22%20height%3D%2218%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M9%207h6m-6%204h6m-6%204h3%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-persona-card:nth-child(4) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%2014v-3a8%208%200%200%201%2016%200v6c0%203-3%204-6%204M4%2012h3v6H4zM17%2012h3v6h-3zM11%2021h3%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-persona-card:nth-child(5) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%2021V13h4v8m2%200V8h4v13m2%200V3h4v18%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-persona-card:nth-child(6) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%227%22%20r%3D%223%22%2F%3E%3Cpath%20d%3D%22M3%2021v-4a6%206%200%200%201%2012%200v4M17%204a3%203%200%200%201%200%206m1%204c3%200%204%204%204%207%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-capability-card:nth-child(1) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%223%22%2F%3E%3Cpath%20d%3D%22M12%202v3m0%2014v3M2%2012h3m14%200h3%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-capability-card:nth-child(2) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%2021V13h4v8m2%200V8h4v13m2%200V3h4v18%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-capability-card:nth-child(3) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22M12%206v6l4%202%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-capability-card:nth-child(4) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%204h16v12h-8l-5%204v-4H4zM8%208h8m-8%204h5%22%2F%3E%3C%2Fsvg%3E"); }
+.scooper-capability-card:nth-child(5) { --card-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23B51469%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%2012C5%200-3%2010%204%2016c4%203%206-1%208-4s5-7%208-4c7%206-1%2016-8%204Z%22%2F%3E%3C%2Fsvg%3E"); }

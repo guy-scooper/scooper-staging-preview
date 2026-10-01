@@ -1,0 +1,312 @@
+.scooper-municipal-case {
+	width: 100%;
+	max-width: none;
+	margin-inline: auto;
+	color: #1c1e21;
+	font-size: .8125rem;
+	line-height: 1.4;
+	text-align: right;
+}
+.scooper-municipal-case p { margin: 0; }
+.scooper-municipal-case__band {
+	display: grid;
+	grid-template-columns: max-content minmax(0, 1fr);
+	align-items: center;
+	gap: .7rem;
+	padding: .52rem .78rem;
+	border: 1px solid #d9e4f3;
+	border-radius: .8rem;
+	background: linear-gradient(110deg, #f8faff, #edf4ff);
+	box-shadow: 0 5px 14px #1a406014;
+}
+.scooper-municipal-case__band strong { color: #285885; font-size: .9rem; font-weight: 800; line-height: 1.3; }
+.scooper-municipal-case__band p { color: #4f6174; font-size: .73rem; line-height: 1.42; }
+.scooper-municipal-case__post {
+	margin-top: .4rem;
+	overflow: hidden;
+	border: 1px solid #dfe3e8;
+	border-radius: .8rem;
+	background: #fff;
+	box-shadow: 0 12px 28px #2331401e, 0 2px 5px #2331400d;
+}
+.scooper-municipal-case__post-header { display: flex; align-items: center; gap: .48rem; padding: .5rem .72rem .3rem; }
+.scooper-municipal-case__group-avatar,
+.scooper-municipal-case__municipal-avatar,
+.scooper-municipal-case__resident-avatar {
+	display: grid;
+	flex: none;
+	place-items: center;
+	width: 1.65rem;
+	height: 1.65rem;
+	border-radius: 50%;
+	background: #1877f2;
+	color: #fff;
+	font-size: .58rem;
+	font-weight: 800;
+}
+.scooper-municipal-case__group-avatar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0;
+	width: 2.25rem;
+	height: 2.25rem;
+	border: 1px solid #ffffff8c;
+	border-radius: .48rem;
+	background: linear-gradient(145deg, #224e7f, #4d89bd);
+	box-shadow: inset 0 0 0 1px #153e7040;
+	font-size: .52rem;
+	line-height: 1.05;
+}
+.scooper-municipal-case__group-avatar-mark {
+	width: .9rem;
+	height: .84rem;
+	background: #fff;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='round'%3E%3Cpath d='M3 11 12 4l9 7v9H3zM9 20v-6h6v6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.scooper-municipal-case__resident-avatar { background: #8395a8; }
+.scooper-municipal-case__group-details { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.scooper-municipal-case__group-details strong { color: #1c1e21; font-size: .81rem; font-weight: 750; line-height: 1.22; }
+.scooper-municipal-case__group-details span { color: #65676b; font-size: .67rem; line-height: 1.25; }
+.scooper-municipal-case__menu {
+	display: grid;
+	flex: none;
+	place-items: center;
+	width: 1.45rem;
+	height: 1.45rem;
+	border-radius: 50%;
+	background: #f0f2f5;
+	color: #65676b;
+	font-size: .8rem;
+	line-height: 1;
+	letter-spacing: .5px;
+}
+.scooper-municipal-case__resident-post { padding: .1rem .78rem .44rem; }
+.scooper-municipal-case__resident-post strong { color: #4b4f56; font-size: .71rem; font-weight: 750; }
+.scooper-municipal-case__resident-post p { margin-top: .12rem; font-size: .82rem; line-height: 1.4; }
+.scooper-municipal-case__engagement {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: .45rem;
+	min-height: 1.55rem;
+	margin-inline: .78rem;
+	border-bottom: 1px solid #e4e6eb;
+	color: #65676b;
+	font-size: .68rem;
+}
+.scooper-municipal-case__reactions,
+.scooper-municipal-case__engagement-detail { display: inline-flex; align-items: center; gap: .3rem; }
+.scooper-municipal-case__reaction-icons { display: inline-flex; align-items: center; padding-inline-start: .13rem; }
+.scooper-municipal-case__reaction-like,
+.scooper-municipal-case__reaction-heart {
+	display: grid;
+	place-items: center;
+	width: .94rem;
+	height: .94rem;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	font-size: .63rem;
+	line-height: 1;
+}
+.scooper-municipal-case__reaction-like { z-index: 1; background: #1877f2; }
+.scooper-municipal-case__reaction-like::before {
+	content: "";
+	width: .53rem;
+	height: .53rem;
+	background: #fff;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 21H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4v12Zm2-12 3.4-6.2a2 2 0 0 1 3.7.8L17.4 9H20a2 2 0 0 1 2 2.4l-1.5 8A2 2 0 0 1 18.5 21H11V9Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.scooper-municipal-case__reaction-heart { margin-inline-start: -.25rem; background: #f3425f; }
+.scooper-municipal-case__engagement-detail { gap: .65rem; }
+.scooper-municipal-case__actions {
+	display: flex;
+	justify-content: space-around;
+	gap: .2rem;
+	padding: .08rem .55rem;
+	border-bottom: 1px solid #e4e6eb;
+}
+.scooper-municipal-case__actions button {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	gap: .3rem;
+	min-height: 1.78rem;
+	padding: .1rem;
+	border: 0;
+	border-radius: .3rem;
+	background: transparent;
+	color: #65676b;
+	font: inherit;
+	font-size: .71rem;
+	font-weight: 750;
+	cursor: default;
+	opacity: 1;
+}
+.scooper-municipal-case__actions button::before {
+	content: "";
+	display: block;
+	flex: none;
+	width: .83rem;
+	height: .83rem;
+	background: #65676b;
+	mask: var(--case-action-icon) center / contain no-repeat;
+}
+.scooper-municipal-case__actions button:nth-child(1) { --case-action-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 21H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4v12Zm2-12 3.4-6.2a2 2 0 0 1 3.7.8L17.4 9H20a2 2 0 0 1 2 2.4l-1.5 8A2 2 0 0 1 18.5 21H11V9Z'/%3E%3C/svg%3E"); }
+.scooper-municipal-case__actions button:nth-child(2) { --case-action-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4 3h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9l-5 3v-3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v12h16V5H4Z'/%3E%3C/svg%3E"); }
+.scooper-municipal-case__actions button:nth-child(3) { --case-action-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='m22 12-8-7v4C6 9 2 14 2 21c3-5 7-7 12-7v5l8-7Z'/%3E%3C/svg%3E"); }
+.scooper-municipal-case__thread { display: grid; gap: .34rem; padding: .48rem .68rem .62rem; background: #fff; }
+.scooper-municipal-case__reply { display: flex; align-items: start; gap: .38rem; min-width: 0; }
+.scooper-municipal-case__bubble {
+	flex: 1;
+	min-width: 0;
+	padding: .34rem .54rem .4rem;
+	border-radius: .75rem;
+	background: #f0f2f5;
+}
+.scooper-municipal-case__bubble strong { color: #1c1e21; font-size: .72rem; font-weight: 750; }
+.scooper-municipal-case__bubble p { margin-top: .06rem; font-size: .78rem; line-height: 1.37; }
+.scooper-municipal-case__reply-identity { display: flex; align-items: baseline; flex-wrap: wrap; gap: .12rem .5rem; }
+.scooper-municipal-case__reply-identity span { color: #1877f2; font-size: .64rem; font-weight: 700; }
+.scooper-municipal-case__photos {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: .2rem;
+	margin-inline-start: 2.03rem;
+	overflow: hidden;
+	border-radius: .45rem;
+}
+.scooper-municipal-case__photo { position: relative; aspect-ratio: 2.25; min-width: 0; overflow: hidden; background: #dfe3e8; }
+.scooper-municipal-case__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 59%; }
+.scooper-municipal-case__photo span {
+	position: absolute;
+	top: .35rem;
+	right: .35rem;
+	padding: .13rem .46rem;
+	border-radius: 99px;
+	background: #1c1e21d9;
+	color: #fff;
+	font-size: .62rem;
+	font-weight: 750;
+}
+.scooper-municipal-case__reply--update .scooper-municipal-case__bubble,
+.scooper-municipal-case__reply--resident .scooper-municipal-case__bubble {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0 .35rem;
+	padding-block: .27rem .32rem;
+}
+.scooper-municipal-case__reply--update .scooper-municipal-case__bubble p,
+.scooper-municipal-case__reply--resident .scooper-municipal-case__bubble p { flex: 1 1 13rem; margin: 0; }
+.scooper-municipal-case.is-revealing [data-reveal-step] { opacity: 0; transform: translateY(5px); transition: opacity 280ms ease, transform 300ms ease; }
+.scooper-municipal-case.is-revealing [data-reveal-step].is-shown { opacity: 1; transform: none; }
+@media (max-width: 420px) {
+	.scooper-municipal-case__band { gap: .5rem; padding: .5rem .62rem; }
+	.scooper-municipal-case__band p { font-size: .74rem; }
+	.scooper-municipal-case__post-header { padding-inline: .6rem; }
+	.scooper-municipal-case__resident-post { padding-inline: .6rem; }
+	.scooper-municipal-case__engagement { margin-inline: .6rem; }
+	.scooper-municipal-case__thread { padding-inline: .55rem; }
+	.scooper-municipal-case__photos { margin-inline-start: 0; }
+	.scooper-municipal-case__photo { aspect-ratio: 1.8; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.scooper-municipal-case.is-revealing [data-reveal-step] { opacity: 1; transform: none; transition: none; }
+}
+/* Municipal Facebook case: reusable, restrained DOM narrative timing. */
+.scooper-municipal-case { --case-reveal-duration:600ms; --case-reveal-stagger:650ms; --case-reveal-first:300ms; --case-reveal-travel:6px; --case-reveal-easing:cubic-bezier(.22,.61,.36,1); }
+.scooper-municipal-case__band { grid-template-columns:auto 1fr; gap:4px 12px; padding:10px 12px; background:#ffffffdb; border-color:#dae4ef; }
+.scooper-municipal-case__band strong { font-size:15px; }
+.scooper-municipal-case__band p { font-size:13px; line-height:1.5; }
+.scooper-municipal-case__illustrative { grid-column:1 / -1; color:#68717e; font-size:12px; line-height:1.4; }
+.scooper-municipal-case__brand { color:#1877f2; background:#fff; border:1px solid #dfe3e8; border-bottom:0; border-radius:16px 16px 0 0; margin-top:8px; padding:10px 16px 6px; font:bold 25px/1 Arial,sans-serif; letter-spacing:-1px; }
+.scooper-municipal-case__post { margin-top:0; border-radius:0 0 16px 16px; box-shadow:0 10px 24px #2331401c; }
+.scooper-municipal-case__post-header { gap:10px; padding:10px 16px 8px; }
+.scooper-municipal-case__group-avatar { width:40px; height:40px; border-radius:50%; }
+.scooper-municipal-case__group-details strong { font-size:16px; line-height:1.35; }
+.scooper-municipal-case__group-details span { font-size:13px; line-height:1.4; }
+.scooper-municipal-case__resident-post { padding:4px 16px 12px; }
+.scooper-municipal-case__resident-post strong { font-size:13px; }
+.scooper-municipal-case__resident-post p { margin-top:4px; font-size:16px; line-height:1.55; }
+.scooper-municipal-case__engagement { margin-inline:16px; padding:6px 0; font-size:13px; }
+.scooper-municipal-case__actions { margin-inline:16px; }
+.scooper-municipal-case__actions button { min-height:40px; font-size:14px; }
+.scooper-municipal-case__thread { padding:12px 16px 16px; gap:10px; }
+.scooper-municipal-case__reply { gap:8px; }
+.scooper-municipal-case__municipal-avatar,.scooper-municipal-case__resident-avatar { width:32px; height:32px; font-size:12px; }
+.scooper-municipal-case__bubble { padding:8px 12px; border-radius:16px; }
+.scooper-municipal-case__bubble strong { font-size:13px; line-height:1.4; }
+.scooper-municipal-case__bubble p { margin-top:3px; font-size:15px; line-height:1.5; }
+.scooper-municipal-case__reply-identity span { color:#285885; font-size:12px; }
+.scooper-municipal-case__photos { margin-inline-start:40px; gap:4px; }
+.scooper-municipal-case__photo { aspect-ratio:1.65; }
+.scooper-municipal-case__photo span { font-size:13px; padding:4px 10px; }
+.scooper-municipal-case__reply--update .scooper-municipal-case__bubble,.scooper-municipal-case__reply--resident .scooper-municipal-case__bubble { display:block; }
+.scooper-municipal-case__reply--update .scooper-municipal-case__bubble p,.scooper-municipal-case__reply--resident .scooper-municipal-case__bubble p { margin-top:3px; }
+.scooper-municipal-case.is-revealing [data-reveal-step] { opacity:0; transform:translateY(var(--case-reveal-travel)); transition:opacity var(--case-reveal-duration) var(--case-reveal-easing),transform var(--case-reveal-duration) var(--case-reveal-easing); }
+.scooper-municipal-case.is-revealing [data-reveal-step].is-shown { opacity:1; transform:none; }
+.scooper-municipal-case__reaction-heart { font-size:0; }
+.scooper-municipal-case__reaction-heart::before { content:""; width:12px; height:12px; background:white; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21 3 12C-4 5 5-3 12 5c7-8 16 0 9 7Z'/%3E%3C/svg%3E") center/contain no-repeat; }
+@media(max-width:600px) { .scooper-municipal-case__band { grid-template-columns:1fr; } .scooper-municipal-case__post-header,.scooper-municipal-case__resident-post { padding-inline:12px; } .scooper-municipal-case__thread { padding-inline:10px; } .scooper-municipal-case__engagement,.scooper-municipal-case__actions { margin-inline:12px; } .scooper-municipal-case__photos { margin-inline-start:0; } .scooper-municipal-case__engagement-detail { flex-wrap:wrap; gap:3px 8px; } }
+@media(prefers-reduced-motion:reduce) { .scooper-municipal-case.is-revealing [data-reveal-step] { opacity:1; transform:none; transition:none; } }
+/* Decorative utility chrome, independent of the five editable story groups. */
+.scooper-municipal-case.is-armed [data-reveal-step] { opacity:0; transform:translateY(var(--case-reveal-travel)); }
+@media(prefers-reduced-motion:reduce) { .scooper-municipal-case.is-armed [data-reveal-step] { opacity:1; transform:none; } }
+.scooper-municipal-case__utility { direction:ltr; display:flex; align-items:center; gap:14px; padding:12px 16px; border:1px solid #dfe3e8; border-bottom:0; border-radius:16px 16px 0 0; background:#fff; }
+.scooper-municipal-case__utility .scooper-municipal-case__brand { margin:0; padding:0; border:0; border-radius:0; font-size:28px; flex:none; }
+.scooper-municipal-case__search { display:flex; align-items:center; flex:1; min-width:32px; height:34px; border-radius:99px; background:#f0f2f5; color:#657188; padding:0 12px; }
+.scooper-municipal-case__search>span { direction:rtl; font-size:13px; padding-inline:8px; }
+/* Shared municipal case stage. Both grid layers reserve their natural dimensions. */
+.scooper-case-view { width:100%; min-width:0; }
+.scooper-case-view__sources { display:none; justify-content:center; gap:6px; margin-bottom:10px; }
+.scooper-case-view.is-enhanced .scooper-case-view__sources,.scooper-case-view--editor .scooper-case-view__sources { display:flex; }
+.scooper-case-view__source { min-height:40px; padding:7px 14px; border:1px solid color-mix(in srgb,var(--source-accent) 45%,#66596f); border-radius:10px; background:#362b42; color:#eee7f4; font:inherit; font-size:14px; cursor:pointer; transition:background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease,transform 180ms ease; }
+.scooper-case-view__source:first-child { --source-accent:#0866ff; --source-ink:#fff; }
+.scooper-case-view__source:last-child { --source-accent:#25d366; --source-ink:#072e22; }
+.scooper-case-view__source[aria-pressed="true"] { background:var(--source-accent); color:var(--source-ink); border-color:var(--source-accent); }
+.scooper-case-view__source:hover,.scooper-case-view__source:focus-visible { border-color:var(--source-accent); box-shadow:0 0 10px color-mix(in srgb,var(--source-accent) 28%,transparent); transform:translateY(-1px); }
+.scooper-case-view__source:focus-visible { outline:2px solid var(--source-accent); outline-offset:3px; }
+@media(prefers-reduced-motion:reduce) { .scooper-case-view__source { transition:none; } .scooper-case-view__source:hover,.scooper-case-view__source:focus-visible { transform:none; } }
+.scooper-case-view__stage { display:grid; --case-reveal-duration:600ms; --case-reveal-stagger:650ms; --case-reveal-first:300ms; --case-reveal-travel:6px; --case-reveal-easing:cubic-bezier(.22,.61,.36,1); }
+.scooper-case-view__panel { grid-area:1 / 1; min-width:0; align-self:start; }
+.scooper-case-view:not(.is-enhanced):not(.scooper-case-view--editor) .scooper-case-view__panel[data-case="whatsapp"] { display:none; }
+.scooper-case-view.is-enhanced .scooper-case-view__panel { transition:opacity 220ms ease; }
+.scooper-case-view.is-enhanced .scooper-case-view__panel:not(.is-selected) { opacity:0; visibility:hidden; pointer-events:none; transition:opacity 220ms ease,visibility 0s 220ms; }
+.scooper-case-view__panel.is-armed [data-reveal-step],.scooper-case-view__panel[data-case-preparing] [data-reveal-step] { opacity:0; transform:translateY(var(--case-reveal-travel)); }
+.scooper-case-view__panel.is-revealing [data-reveal-step] { opacity:0; transform:translateY(var(--case-reveal-travel)); transition:opacity var(--case-reveal-duration) var(--case-reveal-easing),transform var(--case-reveal-duration) var(--case-reveal-easing); }
+.scooper-case-view__panel.is-revealing [data-reveal-step].is-shown { opacity:1; transform:none; }
+.scooper-whatsapp-case { background:#ebe5dc; border:1px solid #d5d9d5; border-radius:16px; overflow:hidden; color:#18251f; font-size:15px; }
+.scooper-whatsapp-case__header { display:flex; align-items:center; gap:12px; min-height:62px; padding:10px 16px; background:#075e54; color:#fff; }
+.scooper-whatsapp-case__header strong { font-size:18px; }
+.scooper-whatsapp-case__header-tools { margin-inline-start:auto; font-size:24px; }
+.scooper-whatsapp-case__avatar { display:grid; place-items:center; width:38px; height:38px; flex:none; border-radius:50%; background:#139f89; font-weight:700; }
+.scooper-whatsapp-case__conversation { display:grid; gap:8px; padding:12px; background-image:radial-gradient(#c5c8bf4d .8px,transparent .8px); background-size:14px 14px; }
+.scooper-whatsapp-case__message { width:87%; justify-self:start; box-sizing:border-box; padding:8px 12px 5px; border-radius:12px 0 12px 12px; background:#fff; box-shadow:0 1px 2px #243d221a; }
+.scooper-whatsapp-case__message--municipal { justify-self:end; border-radius:0 12px 12px 12px; background:#d9fdd3; }
+.scooper-whatsapp-case__message strong { display:block; color:#146751; font-size:13px; line-height:1.2; }
+.scooper-whatsapp-case__message p { margin:3px 0 2px; white-space:pre-line; font-size:15px; line-height:1.5; }
+.scooper-whatsapp-case__message small { display:block; direction:ltr; text-align:left; color:#597069; font-size:11px; line-height:1.2; }
+.scooper-whatsapp-case__evidence { width:80%; justify-self:end; border-radius:12px; padding:5px; background:#d9fdd3; box-sizing:border-box; }
+.scooper-whatsapp-case__evidence .scooper-municipal-case__photos { margin:0; }
+.scooper-whatsapp-case__evidence .scooper-municipal-case__photo { aspect-ratio:4 / 3; border-radius:8px; }
+.scooper-whatsapp-case__input { display:flex; align-items:center; gap:16px; padding:5px 16px; margin:0 12px 6px; border-radius:99px; background:#fff; color:#687871; }
+.scooper-whatsapp-case__input span:nth-child(2) { flex:1; }
+.scooper-whatsapp-case__illustrative { display:block; padding:0 10px 8px; text-align:center; font-size:11px; line-height:1.2; color:#52685d; }
+@media(max-width:600px) { .scooper-case-view__source { min-height:44px; } .scooper-whatsapp-case__conversation { padding:10px; } .scooper-whatsapp-case__message,.scooper-whatsapp-case__evidence { width:95%; } .scooper-whatsapp-case__header { padding-inline:12px; } }
+@media(prefers-reduced-motion:reduce) { .scooper-case-view.is-enhanced .scooper-case-view__panel,.scooper-case-view.is-enhanced .scooper-case-view__panel:not(.is-selected) { transition:none; } .scooper-case-view__panel.is-armed [data-reveal-step],.scooper-case-view__panel[data-case-preparing] [data-reveal-step],.scooper-case-view__panel.is-revealing [data-reveal-step] { opacity:1; transform:none; transition:none; } }
+.scooper-municipal-case__utility svg,.scooper-municipal-case__input svg { width:22px; height:22px; flex:none; }
+.scooper-municipal-case__tools { display:flex; align-items:center; justify-content:space-between; gap:16px; color:#5d6882; }
+.scooper-municipal-case__tools svg:first-child { color:#1877f2; }
+.scooper-municipal-case__utility-avatar { display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:#e5e9ef; color:#73839b; font-size:28px; }
+.scooper-municipal-case__reply--resident { margin-inline-start:44px; }
+.scooper-municipal-case__post-header { padding-top:14px; }
+.scooper-municipal-case__input { display:flex; align-items:center; gap:8px; padding:0 16px 10px; color:#66738a; }
+.scooper-municipal-case__input-shell { display:flex; align-items:center; gap:12px; flex:1; min-width:0; padding:8px 12px; border-radius:99px; background:#f0f2f5; font-size:14px; }
+.scooper-municipal-case__input-shell>span { flex:1; }
+.scooper-municipal-case__illustrative { display:block; padding:0 16px 10px; font-size:11px; text-align:center; color:#66717e; }
+.scooper-municipal-case__reaction-icons { transform:scale(1.15); margin-inline:3px; }
+.scooper-municipal-case__actions button { font-size:15px; min-height:42px; }
+@media(max-width:600px) { .scooper-municipal-case__utility { gap:8px; padding:12px; flex-wrap:wrap; } .scooper-municipal-case__utility .scooper-municipal-case__brand { font-size:25px; } .scooper-municipal-case__tools { width:100%; gap:14px; } .scooper-municipal-case__reply--resident { margin-inline-start:12px; } .scooper-municipal-case__input { padding-inline:10px; } }
